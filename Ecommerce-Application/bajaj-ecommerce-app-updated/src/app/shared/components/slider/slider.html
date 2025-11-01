@@ -1,0 +1,78 @@
+<!-- @if (sliderProducts.length > 0) {
+<div class="slider-container">
+  <div class="slider-wrapper">
+    <div class="slider-content">
+      @for (product of sliderProducts; track product._id) {
+      <div class="slide" [class.active]="$index === currentIndex">
+        <div class="slide-inner">
+          <div class="product-image">
+            <img [src]="product.images[0]" [alt]="product.name" class="img-fluid">
+          </div>
+          <div class="product-info">
+            <h3>{{product.name}}</h3>
+            <div class="pricing">
+              <span class="current-price">${{getCurrentPrice(product).toFixed(2)}}</span>
+              @if (product.discount > 0) {
+              <span class="original-price">${{product.price.toFixed(2)}}</span>
+              <span class="discount-badge">{{product.discount}}% OFF</span>
+              }
+            </div>
+            <button (click)="onProductSelection(product._id)" class="btn btn-primary btn-lg">View Details</button>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+
+    <button class="nav-arrow nav-arrow-left" (click)="prevSlide()">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+    <button class="nav-arrow nav-arrow-right" (click)="nextSlide()">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+
+    <div class="slider-dots">
+      @for (product of sliderProducts; track product._id) {
+      <span class="dot" [class.active]="$index === currentIndex" (click)="goToSlide($index)"></span>
+      }
+    </div>
+  </div>
+</div>
+}
+
+<bajaj-product-details-section 
+  [productId]="selectedProductId" 
+  [isVisible]="isDetailsVisible">
+</bajaj-product-details-section>
+ -->
+
+
+
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg" class="d-block w-100" alt="..." height="400px" width="350px">
+    </div>
+    <div class="carousel-item">
+      <img src="https://images.pexels.com/photos/3755706/pexels-photo-3755706.jpeg" class="d-block w-100" alt="..."height="400px" width="350px">
+    </div>
+    <div class="carousel-item">
+      <img src="https://images.pexels.com/photos/5865196/pexels-photo-5865196.jpeg" class="d-block w-100" alt="..."height="400px" width="350px">
+    </div>
+        <div class="carousel-item">
+      <img src="https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg" class="d-block w-100" alt="..."height="400px" width="350px">
+    </div>
+        <div class="carousel-item">
+      <img src="https://images.pexels.com/photos/6214383/pexels-photo-6214383.jpeg" class="d-block w-100" alt="..."height="400px" width="350px">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

@@ -1,0 +1,83 @@
+<div class="container">
+    <h1>{{title}}</h1>
+    <hr>
+    <form (ngSubmit)="onEventSubmit()" [formGroup]="register.eventForm" #eventForm="ngForm">
+      <fieldset>
+        <div class="form-group">
+          <label for="inputEventId" class="form-label mt-4">Event Id</label>
+          <input type="number" class="form-control" id="inputEventId" placeholder="Please enter your event Id!"
+            name="eventId" formControlName="eventId"> 
+            @if(register.eventForm.controls['eventId'].errors?.['required']){
+                <div class="alert alert-danger">
+                    Event Id is a required field!
+                </div>
+            }
+        </div>
+        <div class="form-group">
+          <label for="inputEventCode" class="form-label mt-4">Event Code</label>
+          <input type="text" class="form-control" id="inputEventCode" placeholder="Please enter your event code!"
+            name="eventCode" formControlName="eventCode">
+               @if(register.eventForm.controls['eventCode'].errors?.['required']){
+                <div class="alert alert-danger">
+                    Event <Code></Code> is a required field!
+                </div>
+            }@else if (register.eventForm.controls['eventCode'].errors?.['minlength']) {
+                <div class="alert alert-danger">
+                    min length is six
+                </div>
+            }@else if (register.eventForm.controls['eventCode'].errors?.['maxlength']) {
+                <div class="alert alert-danger">
+                    max length is six
+                </div>
+            }
+          
+        </div>
+        <div class="form-group">
+          <label for="inputEventName" class="form-label mt-4">Event Name</label>
+          <input type="text" class="form-control" id="inputEventName" placeholder="Please enter your event name!"
+            name="eventName" formControlName="eventName">
+                 @if(register.eventForm.controls['eventName'].errors?.['required']){
+                <div class="alert alert-danger">
+                    Event Name is a required field!
+                </div>
+            }
+          
+        </div>
+        <div class="form-group">
+          <label for="inputDescription" class="form-label mt-4">Description</label>
+          <input type="text" class="form-control" id="inputDescription" placeholder="Please enter your event description!"
+            name="description" formControlName="description">
+                 @if(register.eventForm.controls['description'].errors?.['required']){
+                <div class="alert alert-danger">
+                    Description is a required field!
+                </div>
+            }
+        </div>
+        <div class="form-group">
+          <label for="inputStartDate" class="form-label mt-4">Start Date</label>
+          <input type="date" class="form-control" id="inputStartDate"
+            placeholder="Please enter/select your event start date!" name="startDate" formControlName="startDate">
+        </div>
+        <div class="form-group">
+          <label for="inputEndDate" class="form-label mt-4">End Date</label>
+          <input type="date" class="form-control" id="inputEndDate" placeholder="Please enter/select your event end date!"
+            name="endDate" formControlName="endDate">
+        </div>
+        <div class="form-group">
+          <label for="inputFees" class="form-label mt-4">Event Fees</label>
+          <input type="number" class="form-control" id="inputFees" placeholder="Please enter your event fees!" name="fees" formControlName="fees">
+        </div>
+        <div class="form-group">
+          <label for="inputSeatsFilled" class="form-label mt-4">Total Seats Filled</label>
+          <input type="number" class="form-control" id="inputSeatsFilled"
+            placeholder="Please enter your total registrations!" name="seatsFilled" formControlName="seatsFilled">
+                    @if(register.eventForm.controls['seatsFilled'].errors?.['required']){
+                <div class="alert alert-danger">
+                    seatsFilled is a required field!
+                </div>
+            }
+        </div>
+        <button type="submit" class="btn btn-dark" [disabled]="!eventForm.valid">Register Event</button>
+      </fieldset>
+    </form>
+  </div>

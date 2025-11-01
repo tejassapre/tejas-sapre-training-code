@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Creathink — Clean Dashboard (HTML & CSS)</title>
+    <link rel="stylesheet" href="styles/site.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+  <div class="shell">
+<!-- Hamburger Toggle -->
+<input type="checkbox" id="menu-toggle" />
+<label for="menu-toggle" class="hamburger">&#9776;</label>
+
+    
+    <aside class="sidebar" aria-label="Sidebar">
+  <div class="brand">
+    <div class="logo">CT</div>
+    <div>
+      <h1>CREATHINK</h1>
+    </div>
+  </div>
+
+  <div class="nav">
+    <div class="nav-group">
+      <a class="active" href="#">
+        <i class="fa-solid fa-border-all"></i> Dashboard &nbsp;<span>  <i class="fa-solid fa-chevron-up"></i>
+</span>
+      </a>
+      <a href="#"><i class="fa-solid fa-house"></i> My Homepage</a>
+      <a href="#"><i class="fa-solid fa-list-check"></i> To-do List Projects</a>
+      <a href="#"><i class="fa-solid fa-chart-pie"></i> Sales Analytics</a>
+      <a href="#"><i class="fa-solid fa-headset"></i> Call Center Date</a>
+      <a href="#"><i class="fa-solid fa-headset"></i> Product Requirement</a>
+
+    </div>
+
+
+    <div class="nav-group1">
+      <a href="#"><i class="fa-regular fa-user"></i> Accounts</a>
+      <a href="#"><i class="fa-solid fa-address-book"></i> Contacts</a>
+      <a href="#"><i class="fa-solid fa-users"></i> Team Design</a>
+      <a href="#"><i class="fa-solid fa-envelope"></i> Mails &nbsp;&nbsp;&nbsp;&nbsp;<span>  <i class="fa-solid fa-chevron-down"></i>
+</span></a>
+      <a href="#"><i class="fa-solid fa-calendar-days"></i> Calendar <span>  <i class="fa-solid fa-chevron-down"></i>
+</span></a>
+      <a href="#"><i class="fa-solid fa-suitcase-rolling"></i> Cases</a>
+      <a href="#"><i class="fa-solid fa-chart-line"></i> Activities <span>  <i class="fa-solid fa-chevron-down"></i>
+</span></a>
+      <a href="#"><i class="fa-solid fa-file"></i> Documents</a>
+      <a href="#"><i class="fa-regular fa-circle-question"></i></i> Support</a>
+    </div>
+  </div>
+</aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- topbar -->
+      <div class="topbar">
+        <div class="searchbar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M21 21l-4.35-4.35" stroke="#c3c9d6" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="11" cy="11" r="6" stroke="#c3c9d6" stroke-linecap="round" stroke-linejoin="round"></circle></svg>
+          <input placeholder="Search projects, teams, reports..." aria-label="Search">
+        </div>
+        <div class="top-actions">
+          <div class="icon-btn" title="Notifications">
+            <i class="fa-regular fa-bell"></i>
+          </div>
+          <div class="icon-btn" title="Add">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <div class="avatar">
+            <img src="data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><rect rx='24' width='48' height='48' fill='%236b7cff'/><text x='50%' y='55%' font-size='20' font-family='Arial' fill='white' text-anchor='middle'>F</text></svg>" alt="avatar">
+            <div style="min-width:80px">
+              <div style="font-weight:700">Firman Utina &nbsp;<span>  <i class="fa-solid fa-chevron-down"></i>
+</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- cards row -->
+      <div class="cards-row" role="list">
+        <div class="stat-card" role="listitem">
+          <div class="stat-top">
+            <!-- <div class="badge">💰</div> -->
+             <div class="badge" style="background: rgb(47, 142, 219) ;"><i class="fa-solid fa-people-group" style="color: #f0f2f4;"></i></div>
+            <div style="font-size:24px;">⋮</div>
+
+
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div class="small muted">Total Customers</div>
+              <div class="stat-num">10,500</div>
+            </div>
+            <div style="background:rgba(144, 146, 222, 0.2);
+            padding:6px 10px;
+            border-radius:10px;
+            font-weight:700;
+            color:rgb(22, 25, 203);
+            display:flex;
+            align-items:center;
+            gap:4px;">
+            <i class="fa-solid fa-arrow-trend-up"></i> 17%
+             </div>      
+          </div>
+        </div>
+
+      <div class="stat-card" role="listitem" 
+     style="background:blue; padding:16px; border-radius:12px; color:white;">
+  <div class="stat-top" style="display:flex;justify-content:space-between;align-items:center;">
+    <div class="badge" style="background:rgb(90, 90, 227) ;"><i class="fa-solid fa-user-group" style="color: #dfe3e6;"></i></div>
+    <div style="font-size:24px; color:white;">⋮</div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+    <div>
+      <div class="small muted" style="color:white;">Team Design</div>
+      <div class="stat-num" style="color:white;">25</div>
+    </div>
+
+            <div style="background:rgba(255,255,255,0.2);
+            padding:6px 10px;
+            border-radius:10px;
+            font-weight:700;
+            color:rgb(227, 227, 236);
+            display:flex;
+            align-items:center;
+            gap:4px;">
+            <i class="fa-solid fa-arrow-trend-up"></i> 20%
+          </div>
+          </div>
+        </div>
+
+        <div class="stat-card" role="listitem">
+          <div class="stat-top">
+            <div class="badge" style="background: #ce0a0a;"><i class="fa-solid fa-bag-shopping" style="color: #e2e5e8;"></i></div>
+            <div style="font-size:24px;">⋮</div>
+
+
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div class="small muted">Total Order</div>
+              <div class="stat-num">1,300</div>
+            </div>
+              <div style="background:rgba(197, 114, 114, 0.2);
+            padding:6px 10px;
+            border-radius:10px;
+            font-weight:700;
+            color:rgb(232, 43, 33);
+            display:flex;
+            align-items:center;
+            gap:4px;">
+             <i class="fa-solid fa-arrow-trend-down"></i> 17%
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="stat-card" role="listitem">
+          <div class="stat-top">
+            <div class="badge" style="background: rgb(47, 142, 219);"><i class="fa-solid fa-coins" style="color: #fcfcfd;"></i></div>
+            <div style="font-size:24px;">⋮</div>
+
+
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div class="small muted">Total Income</div>
+              <div class="stat-num">100,58$</div>
+            </div>
+<div style="background:rgba(144, 146, 222, 0.2);
+            padding:6px 10px;
+            border-radius:10px;
+            font-weight:700;
+            color:rgb(22, 25, 203);
+            display:flex;
+            align-items:center;
+            gap:4px;">
+  <i class="fa-solid fa-arrow-trend-up"></i> 35%
+</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- chart grid -->
+      <div class="grid">
+        <section class="panel" style="position: relative;">
+          <h3>Monthly Income <span class="small muted" style="margin-left:286px">Provisions Month &nbsp; &nbsp; March 2023 <i class="fa-regular fa-calendar-days"></i></span></h3>
+            <div style="position: absolute; top: 16px; right: 16px; font-size: 24px; cursor: pointer;">...</div>
+            
+
+
+          <div class="line-chart">
+            <svg class="chart-spark" viewBox="0 0 1000 260" preserveAspectRatio="none" role="img" aria-label="Monthly income chart">
+              <defs>
+                <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#7a88ff" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#eef3ff" stop-opacity="0.12"/>
+                </linearGradient>
+              </defs>
+
+              <rect x="0" y="0" width="1000" height="260" fill="transparent" />
+              <path d="M0,180 C60,150 140,140 200,170 260,210 340,120 420,140 500,170 600,140 700,160 780,145 860,165 1000,150 L1000,260 L0,260 Z"
+                    fill="url(#g1)"></path>
+              <path d="M0,180 C60,150 140,140 200,170 260,210 340,120 420,140 500,170 600,140 700,160 780,145 860,165 1000,150"
+                    fill="none" stroke="#5563ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+
+              <line x1="420" y1="30" x2="420" y2="220" stroke="#d6d9e6" stroke-dasharray="4 6" stroke-width="1"></line>
+
+              <g transform="translate(400,70)">
+                <rect x="0" y="-10" rx="8" ry="8" width="120" height="34" fill="#ffffff" stroke="#e6e9f2" />
+                <text x="10" y="12" font-size="13" fill="#111827">220,342,123</text>
+              </g>
+            </svg>
+          </div>
+        </section>
+        
+
+        <aside class="panel" style="position: relative;">
+          <h3>Design Activity</h3>
+
+            <div style="position: absolute; top: 16px; right: 16px; font-size: 24px; cursor: pointer;">...</div>
+
+          <div class="donut" style="flex-direction:column;">
+            <svg width="160" height="160" viewBox="0 0 42 42" role="img" aria-label="Design distribution">
+              <circle r="15.9" cx="21" cy="21" fill="transparent" stroke="#f0f1f6" stroke-width="8" />
+              <circle r="15.9" cx="21" cy="21" fill="transparent" stroke="#5563ff" stroke-width="8" stroke-dasharray="25 75" stroke-dashoffset="25" transform="rotate(-90 21 21)"></circle>
+              <circle r="15.9" cx="21" cy="21" fill="transparent" stroke="#ffb46b" stroke-width="8" stroke-dasharray="12 88" stroke-dashoffset="-10" transform="rotate(-90 21 21)"></circle>
+              <circle r="15.9" cx="21" cy="21" fill="transparent" stroke="#ff6b6b" stroke-width="8" stroke-dasharray="10 90" stroke-dashoffset="50" transform="rotate(-90 21 21)"></circle>
+              <!-- <text x="21" y="23" text-anchor="middle" font-size="5" fill="#111827" font-weight="700">100%</text> -->
+               <text x="21" y="18" text-anchor="middle" font-size="4" fill="#111827" font-weight="500">Total</text>
+    <text x="21" y="24" text-anchor="middle" font-size="5" fill="#111827" font-weight="700">100%</text>
+            </svg>
+
+            <div style="margin-top:12px;width:100%;display:flex;justify-content:space-between;align-items:center">
+              <div class="small muted"><span style="display:inline-block;width:10px;height:10px;
+               background:linear-gradient(180deg,#5b6bff,#9aa4ff);
+               border-radius:2px;margin-right:6px;"></span>Mobile</div>
+              <div class="small muted"><span style="display:inline-block;width:10px;height:10px;
+               background:linear-gradient(180deg,#ce0a0a,#b9120f);
+               border-radius:2px;margin-right:6px;"></span>Website</div>
+              <div class="small muted"><span style="display:inline-block;width:10px;height:10px;
+               background:linear-gradient(180deg,#e8d90b,#e8d90b);
+               border-radius:2px;margin-right:6px;"></span>Illustration</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- lower panels -->
+      <div class="lower">
+        <section class="panel" style="position:relative;">
+  <h3 style="margin:0;">Customers Order</h3>
+
+  <!-- Three-dot menu -->
+  <div style="position:absolute; top:16px; right:16px; font-size:20px; cursor:pointer;">...</div>
+
+  <div class="bars" style="margin-top:12px">
+    <div class="legend">
+      <span style="display:inline-block;width:10px;height:10px;background:linear-gradient(180deg,#5b6bff,#5b6bff);border-radius:2px"></span>
+      <span class="small muted">Website</span>
+      <span style="display:inline-block;width:10px;height:10px;background:linear-gradient(180deg,#5b6bff,#5b6bff);border-radius:2px;margin-left:14px"></span>
+      <span class="small muted">Mobile Apps</span>
+      <span style="display:inline-block;width:10px;height:10px;background:linear-gradient(180deg,#5b6bff,#5b6bff);border-radius:2px;margin-left:14px"></span>
+      <span class="small muted">Customer to Customer</span>
+    </div>
+
+    <div class="bars-plot" aria-hidden>
+      <div class="bar" style="height:120px"><span class="bar-value">120</span></div>
+      <div class="bar bar--light" style="height:80px"><span class="bar-value">80</span></div>
+      <div class="bar" style="height:130px"><span class="bar-value">150</span></div>
+      <div class="bar bar--light" style="height:100px"><span class="bar-value">100</span></div>
+      <div class="bar" style="height:139px"><span class="bar-value">180</span></div>
+      <div class="bar bar--light" style="height:70px"><span class="bar-value">70</span></div>
+      <div class="bar" style="height:130px"><span class="bar-value">130</span></div>
+      <div class="bar bar--light" style="height:95px"><span class="bar-value">95</span></div>
+      <div class="bar" style="height:140px"><span class="bar-value">160</span></div>
+    </div>
+  </div>
+</section>
+
+
+        <section class="panel" style="position: relative;">
+          <h3>Total Earning from Design</h3>
+  <div style="position: absolute; top: 16px; right: 16px; font-size: 24px; cursor: pointer;">...</div>
+
+          <div class="earn-grid" style="margin-top:12px">
+            <div class="earn-item">
+              <div class="small muted">UI/UX Design Mobile</div>
+              <div style="font-weight:800;margin-top:8px">$700K</div>
+            </div>
+            <div class="earn-item">
+              <div class="small muted">UI/UX Design Website</div>
+              <div style="font-weight:800;margin-top:8px">$75K</div>
+            </div>
+            <div class="earn-item">
+              <div class="small muted">Design Logo</div>
+              <div style="font-weight:800;margin-top:8px">$50K</div>
+            </div>
+            <div class="earn-item">
+              <div class="small muted">Design Illustration</div>
+              <div style="font-weight:800;margin-top:8px">$25K</div>
+            </div>
+          </div>
+
+          <!-- small sparkline area -->
+          <div style="margin-top:14px">
+            <svg viewBox="0 0 100 28" width="100%" height="40" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="g2" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0" stop-color="#6b7cff" stop-opacity="0.7"></stop>
+                  <stop offset="1" stop-color="#dfe5ff" stop-opacity="0.1"></stop>
+                </linearGradient>
+              </defs>
+              <path d="M0 20 L10 14 L20 16 L30 10 L40 12 L50 8 L60 12 L70 10 L80 12 L90 8 L100 12 L100 28 L0 28 Z" fill="url(#g2)"></path>
+            </svg>
+          </div>
+        </section>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>

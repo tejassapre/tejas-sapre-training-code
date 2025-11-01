@@ -1,0 +1,78 @@
+<!-- <p>employees-list works!</p> -->
+@if (employees && employees.length>0 ){
+<h1>{{ title }}</h1>
+<hr />
+<h6>{{ subTitle }}</h6>
+@if ((childMessage)){
+<p>{{ childMessage }}</p>
+}
+<div class="container row">
+  <input
+    type="search"
+    id="inputSearch"
+    class="form-control"
+    placeholder="Search Employees by Employee Name!"
+    [(ngModel)]="searchChars"
+    (input)="searchEvents()"
+  />
+</div>
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      @for ( col of columns; track $index){
+      <th>{{ col }}</th>
+      }
+    </tr>
+    <tr>
+       <th (click)="sortByEventCode()" style="cursor: pointer;">
+          employeeName
+          <span>{{ sortDirection === 'asc' ? '↑' : '↓' }}</span>
+        </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (employee of filteredEmployees|paginate:{itemsPerPage:pageSize,
+    currentPage:pageNumber};track $index){
+    <tr>
+      <td>
+        <span>{{ employee.employeeName }}</span>
+      </td>
+
+      <td>
+        <span>{{ employee.city }}</span>
+      </td>
+      <td>
+        <span>{{ employee.phone }}</span>
+      </td>
+      <td>
+        <span>{{ employee.email }}</span>
+      </td>
+      <td>
+        <button class="btn btn-dark" (click)="onEmployeeSelection(employee.employeeId)">Show Details</button>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+<div class="container text-center my-pagination">
+  <pagination-controls (pageChange)="pageNumber = $event"></pagination-controls>
+</div>
+@if (selectedEmployeeId>0){
+
+  @defer(){
+<app-employee-details
+  [employeeId]="selectedEmployeeId"
+  subTitle="childSubTitle"
+  (sendConfirmationMessage)="handleChildMessage($event)"
+></app-employee-details>}@placeholder(minimum 3000ms) {
+  <h4>Please wait! your contents are getting prepared!</h4>
+}@error {
+  <h4>Something went wrong!</h4>
+}
+<!-- @if(childMessage) {
+<p><strong>Child message:</strong> {{ childMessage }}</p>
+} -->
+} } @else{
+<h1>Sorry, No data found in Employee Database, Please try After sometime!!</h1>
+}

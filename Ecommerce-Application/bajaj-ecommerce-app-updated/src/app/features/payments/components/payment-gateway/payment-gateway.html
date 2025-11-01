@@ -1,0 +1,72 @@
+
+
+
+ <div class="payment-container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-7">
+      <div class="card payment-card shadow-lg border-0">
+        <div class="card-body p-5">
+          <h3 class="mb-3 text-center text-primary fw-bold">Secure Payment</h3>
+          <p class="text-muted text-center mb-4">
+            Choose a payment method and enter your details below.
+          </p>
+
+          <form [formGroup]="form" (ngSubmit)="payNow()">
+
+            <!-- Payment Method -->
+            <div class="mb-4">
+              <label class="form-label fw-semibold">Payment Method</label>
+              <div class="d-flex gap-4 mt-2">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" value="upi" formControlName="method" id="m1" />
+                  <label class="form-check-label" for="m1" style="color: black;border-color: black;">UPI</label>
+
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" value="card" formControlName="method" id="m2" style="color: black;" />
+                  <label class="form-check-label" for="m2" style="color: black;border-color: black;">Card</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- UPI Form -->
+            <div *ngIf="form.value.method === 'upi'" class="animate-fade-in">
+              <label class="form-label fw-semibold">UPI ID</label>
+              <input class="form-control" placeholder="name@bank" formControlName="upiId" />
+            </div>
+
+            <!-- Card Form -->
+            <div *ngIf="form.value.method === 'card'" class="animate-fade-in">
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Card Number</label>
+                <input class="form-control" placeholder="4111 1111 1111 1111" formControlName="cardNumber" />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Name on Card</label>
+                <input class="form-control" formControlName="cardName" placeholder="John Doe" />
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <label class="form-label fw-semibold">Expiry</label>
+                  <input class="form-control" placeholder="MM/YY" formControlName="expiry" />
+                </div>
+                <div class="col">
+                  <label class="form-label fw-semibold">CVV</label>
+                  <input class="form-control" placeholder="123" formControlName="cvv" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <button class="btn w-100 mt-4 btn-pay" [disabled]="processing" type="submit">
+              {{ processing ? 'Processing...' : 'Pay Now' }}
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

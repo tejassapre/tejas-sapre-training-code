@@ -1,0 +1,101 @@
+/* .card { border-radius: 12px; } */
+
+
+/* Background */
+.payment-container {
+  background-color: #dbeeff; /* light sky blue */
+  border-radius: 20px;
+  min-height: 100vh;
+}
+
+/* Card styling */
+.payment-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.payment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Input focus */
+.form-control:focus {
+  border-color: #66b3ff;
+  box-shadow: 0 0 0 0.2rem rgba(102, 179, 255, 0.25);
+}
+
+/* Labels */
+.form-label {
+  color: #333;
+}
+
+/* Payment button */
+.btn-pay {
+  background-color: #0d6efd;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 0;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-pay:hover:not(:disabled) {
+  background-color: #0b5ed7;
+  transform: scale(1.03);
+}
+
+/* Fade-in animation for form sections */
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .payment-card {
+    padding: 1.5rem;
+  }
+}
+
+
+/* Themed radio buttons (sky blue) */
+.form-check-input {
+  border: 2px solid #0d6efd;          /* primary blue outline */
+  background-color: #fff;             /* white fill */
+  width: 1.1em;
+  height: 1.1em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* When selected */
+.form-check-input:checked {
+  background-color: #0d6efd;          /* filled with theme blue */
+  border-color: #0d6efd;
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.4);
+}
+
+/* Subtle hover effect */
+.form-check-input:hover {
+  border-color: #0a58ca;
+}
+
+/* Keep labels aligned and readable */
+.form-check-label {
+  margin-left: 6px;
+  color: #222;
+  font-weight: 500;
+}

@@ -1,0 +1,92 @@
+<p>employee-details works!</p>
+<!-- <p>event-details works!</p> -->
+@if (employee){
+<h1>{{ title + employee.employeeName }}</h1>
+
+<h6>{{ subTitle }}</h6>
+<table class="table table-hover table-striped">
+  <tbody>
+    <tr>
+      <th>employee Id</th>
+      <td>
+        <span>{{ employee.employeeId }}</span>
+      </td>
+    </tr>
+
+    <tr>
+      <th>Employee Name</th>
+      <td>
+        <span>{{ employee.employeeName }}</span>
+      </td>
+    </tr>
+
+    <tr>
+      <th>Employee Address</th>
+      <td>
+        <span>{{ employee.address }}</span>
+      </td>
+    </tr>
+
+    <tr>
+      <th>Employee City</th>
+      <td>
+        <span>{{ employee.city }}</span>
+      </td>
+    </tr>
+
+    <tr>
+      <th>Event Zip code</th>
+      <td>
+        <span>{{ employee.zipcode }}</span>
+      </td>
+    </tr>
+
+    <tr>
+      <th>Employee Phone</th>
+      <td>
+        <span>{{ employee.phone }}</span>
+      </td>
+    </tr>
+
+    <tr>
+      <th>Employee Mail</th>
+      <td>
+        <span>{{ employee.email }}</span>
+      </td>
+    </tr>
+
+    <tr>
+      <th>Employee Skillsets</th>
+      <td>
+        <span>{{ employee.skillSets }}</span>
+      </td>
+    </tr>
+
+    <tr>
+      <th>Employee Country</th>
+      <td>
+        <span>{{ employee.country }}</span>
+      </td>
+    </tr>
+
+    <tr>
+      <th>Employee Joining Date</th>
+      <td>
+        <span>{{ employee.joiningDate }}</span>
+      </td>
+    </tr>
+
+    <tr>
+      <th>Employee Avatar</th>
+      <td>
+        <!-- <span>{{ employee.avatar }}</span> -->
+        <img [src]="employee.avatar" alt="No Image " srcset="" />
+      </td>
+    </tr>
+  </tbody>
+</table>
+<hr />
+<button class="btn btn-success" (click)="onEmployeeProcessed()">Send Message</button>
+}@else{
+<h4>We did not find the event which you are looking for !</h4>
+}

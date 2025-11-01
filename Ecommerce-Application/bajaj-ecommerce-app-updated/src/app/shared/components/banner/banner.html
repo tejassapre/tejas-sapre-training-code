@@ -1,0 +1,56 @@
+@if (loading) {
+<div class="text-center py-5">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+} @else if (products.length > 0) {
+<div class="banner-container">
+  <div class="container">
+    <h2 class="section-title">Featured Products</h2>
+    <div class="product-grid">
+      @for (product of paginated; track product._id) {
+      <div class="product-card" (click)="onProductSelection(product._id)">
+        <div class="card-image">
+          @if (product.images && product.images.length > 0) {
+          <img [src]="product.images[0]" [alt]="product.name">
+          } @else {
+          <div class="no-image">No Image</div>
+          }
+          @if (product.discount > 0) {
+          <span class="discount-badge">-{{product.discount}}%</span>
+          }
+        </div>
+        <div class="card-body">
+          <h5 class="product-name">{{product.name}}</h5>
+          <p class="product-description">{{product.description}}</p>
+          <div class="rating">
+            @for (star of [1,2,3,4,5]; track star) {
+            <i class="bi bi-star{{star <= product.rating ? '-fill' : ''}}"></i>
+            }
+            <span class="review-count">({{product.numReviews}})</span>
+          </div>
+          <div class="price-section">
+            <span class="current-price">${{getCurrentPrice(product).toFixed(2)}}</span>
+            @if (product.discount > 0) {
+            <span class="original-price">${{product.price.toFixed(2)}}</span>
+            }
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="d-flex justify-content-center gap-2 mt-3">
+      <button class="btn btn-outline-secondary" (click)="goTo(currentPage-1)" [disabled]="currentPage===1">Prev</button>
+      <span class="align-self-center">Page {{currentPage}} of {{totalPages}}</span>
+      <button class="btn btn-outline-secondary" (click)="goTo(currentPage+1)" [disabled]="currentPage===totalPages">Next</button>
+    </div>
+  </div>
+</div>
+}
+
+<!-- Product Details Section -->
+<bajaj-product-details-section 
+  [productId]="selectedProductId" 
+  [isVisible]="isDetailsVisible">
+</bajaj-product-details-section>
